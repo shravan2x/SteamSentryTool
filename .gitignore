@@ -1,0 +1,5 @@
+packages/
+SteamSentryTool/obj/
+SteamSentryTool/bin/
+*.suo
+*.user
