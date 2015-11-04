@@ -15,7 +15,7 @@ You can download binaries from the [releases page](https://github.com/ChaosEmper
 There is currently no documentation for the project. It will be added in a future release.
 
 ## License
-SteamKit2 is released under the [MIT license](https://opensource.org/licenses/MIT).
+SteamSentryTool is released under the [MIT license](https://opensource.org/licenses/MIT).
 
 ## Dependencies
 The SteamSentryTool depends on [SteamKit2](https://github.com/SteamRE/SteamKit) to connect to Steam.
