@@ -1,5 +1,6 @@
 # SteamSentryTool
 A tool to help manage Steam sentry files. It has the following functions :
+
 1. When a sentry file **is not** selected :
     1. To check if given Steam credentials are valid.
     2. To create a new sentry file for an account.
