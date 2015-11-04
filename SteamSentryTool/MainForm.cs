@@ -17,13 +17,13 @@ namespace SteamSentryTool
             UsernameBox.Select();
         }
 
-        private void SelectorButton_Click(object sender, System.EventArgs e)
+        private void SelectorButton_Click(object sender, EventArgs e)
         {
             OpenFileDialog selector = new OpenFileDialog();
             
             if (selector.ShowDialog() != DialogResult.OK)
                 return;
-            if (selector.SafeFileName.Contains(".") && !selector.SafeFileName.EndsWith(".ssfn") && !selector.SafeFileName.EndsWith(".bin"))
+            if (selector.SafeFileName.Contains(".") && !selector.SafeFileName.EndsWith(".ssfn") && !selector.SafeFileName.EndsWith(".bin") && !selector.SafeFileName.EndsWith(".sentry"))
                 if (MessageBox.Show("This does not appear to be a sentry file. Continue?", "Warning", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                     return;
             
