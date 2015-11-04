@@ -166,9 +166,6 @@ namespace SteamSentryTool
                 _isRunning = false;
                 return;
             }
-
-            _checkResult = ECheckResult.Added;
-            _isRunning = false;
         }
 
         private void OnMachineAuth(SteamUser.UpdateMachineAuthCallback callback)
@@ -208,6 +205,9 @@ namespace SteamSentryTool
 
                 SentryFileHash = sentryHash,
             });
+
+            _checkResult = ECheckResult.Added;
+            _isRunning = false;
         }
     }
 }
