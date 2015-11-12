@@ -173,6 +173,10 @@ namespace SteamSentryTool
                     MessageBox.Show("Auth code invalid.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
+                case ECheckResult.TwoFactorMismatch:
+                    MessageBox.Show("Two factor code invalid.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
                 case ECheckResult.SentryMissing:
                     MessageBox.Show("Sentry file is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;

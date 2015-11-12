@@ -10,6 +10,7 @@
         CredsWrong,
         AuthCodeExpired,
         AuthCodeInvalid,
+        TwoFactorMismatch,
         Cancelled
     }
 }

@@ -148,6 +148,13 @@ namespace SteamSentryTool
                 _isRunning = false;
                 return;
             }
+
+            if (callback.Result == EResult.TwoFactorCodeMismatch)
+            {
+                _checkResult = ECheckResult.TwoFactorMismatch;
+                _isRunning = false;
+                return;
+            }
             
             if (callback.Result != EResult.OK)
             {
