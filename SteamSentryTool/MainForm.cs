@@ -101,6 +101,10 @@ namespace SteamSentryTool
                     MessageBox.Show("Credentials are wrong.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     break;
 
+                case ECheckResult.CannotCheck:
+                    MessageBox.Show("Cannot check since Two-Factor authentication is enabled.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    break;
+
                 case ECheckResult.SentryMissing:
                     MessageBox.Show("Sentry file is missing.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     break;

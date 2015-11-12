@@ -11,6 +11,7 @@
         AuthCodeExpired,
         AuthCodeInvalid,
         TwoFactorMismatch,
+        CannotCheck,
         Cancelled
     }
 }

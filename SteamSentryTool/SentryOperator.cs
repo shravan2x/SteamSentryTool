@@ -102,9 +102,16 @@ namespace SteamSentryTool
 
             if (isSteamGuard || is2FA)
             {
-                if (_operation != EOperationType.CreateSentry && _operation != EOperationType.AddToSentry)
+                if (_operation == EOperationType.CheckCreds)
                 {
                     _checkResult = ECheckResult.No;
+                    _isRunning = false;
+                    return;
+                }
+
+                if (_operation == EOperationType.CheckSentry)
+                {
+                    _checkResult = is2FA ? ECheckResult.CannotCheck : ECheckResult.No;
                     _isRunning = false;
                     return;
                 }
@@ -113,25 +120,19 @@ namespace SteamSentryTool
                 {
                     _twoFactorAuth = InputBox.AskTwoFactor();
 
-                    if (_twoFactorAuth == null)
-                    {
-                        _checkResult = ECheckResult.Cancelled;
-                        _isRunning = false;
+                    if (_twoFactorAuth != null)
                         return;
-                    }
                 }
                 else
                 {
                     _authCode = InputBox.AskAuth(callback.EmailDomain);
 
-                    if (_authCode == null)
-                    {
-                        _checkResult = ECheckResult.Cancelled;
-                        _isRunning = false;
+                    if (_authCode != null)
                         return;
-                    }
                 }
 
+                _checkResult = ECheckResult.Cancelled;
+                _isRunning = false;
                 return;
             }
 
